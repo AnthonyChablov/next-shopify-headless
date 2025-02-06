@@ -1,11 +1,9 @@
 // Page.test.tsx
-import { describe, it, expect } from "vitest";
-import Page from "@/app/page";
+import { expect, test } from "vitest";
+import { render, screen } from "@testing-library/react";
+import Page from "../app/page";
 
-describe("Page Component", () => {
-  it("should render correctly in the dom ", () => {
-    render(<Page />);
-    const page = screen.getByRole("page");
-    expect(containerElement).toBeEmptyDOMElement();
-  });
+test("Page", () => {
+  render(<Page />);
+  expect(screen.getByRole("page")).toBeDefined();
 });
